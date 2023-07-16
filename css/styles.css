@@ -129,11 +129,16 @@ a span.logo-2 {
   padding-top: 200px;
   padding-bottom: 200px;
   text-align: center;
+  background: linear-gradient(rgba(47, 48, 58, 0.40), rgba(47, 48, 58, 0.40)),
+    url('../images/hero-background-img.jpg');
+  background-repeat: no-repeat;
+  background-color: #2F303A;
+  background-position: center;
+  background-size: cover;
 }
 
 .hero-section,
 .hero-heading {
-  background-color: #2F303A;
   color: var(--heading-color);
   text-align: center;
   font-size: 44px;
