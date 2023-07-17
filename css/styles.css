@@ -7,6 +7,10 @@
   --main-background-color: #FFFFFF;
   --heading-color: #ffffff;
   --footer-color: #2F303A;
+  --hero-btn-color: #2196F3;
+  --benefits-icon-background-color: #F5F4FA;
+  --benefits-title-color:  #212121;
+  --social-icons-color: #AFB1B8;
   --text-font-family: 'Roboto', sans-serif;
   --logo-font-family: 'Raleway', sans-serif;
 }
@@ -55,6 +59,7 @@ button {
 .global-header .container {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding-top: 24px;
   padding-bottom: 25px;
   background-color: var(--heading-color);
@@ -93,10 +98,13 @@ a.logo {
 
 .header-contact {
   display: flex;
-  margin-left: auto;
+  align-content: center;
+  align-items: center;
 }
 
 .global-header .header-contact a {
+  display: flex;
+  align-items: center;
   color: #757575;
 }
 
@@ -109,6 +117,22 @@ a.logo {
 
 .global-header .main-navigation a.active {
   color: var(--link-active-color);
+}
+
+.mail-icon {
+  display: block;
+  margin-right: 10px;
+  width: 16px;
+  height: 12px;
+  fill: currentColor;
+}
+
+.telephone-icon {
+  display: block;
+  margin-right: 10px;
+  width: 10px;
+  height: 16px;
+  fill: currentColor;
 }
 
 a span.logo-1,
@@ -160,13 +184,19 @@ a span.logo-2 {
   line-height: 1.87;
   letter-spacing: 0.96px;
   border-radius: 4px;
-  background: #2196F3;
+  background: var(--hero-btn-color);
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+}
+
+.benefits {
+  padding-top: 94px;
+  padding-bottom: 94px;
 }
 
 .benefits-content {
   display: flex;
   justify-content: space-between;
+  gap: 30px;
 }
 
 .benefits .benefits-content .benefits-content-description,
@@ -178,24 +208,54 @@ a span.logo-2 {
 
 .benefits .benefits-content .benefits-content-title {
   margin-bottom: 10px;
-  color: #212121;
+  color: var(--benefits-title-color);
   font-weight: 700;
   line-height: normal;
   text-transform: uppercase;
 }
 
-.benefits-content-item {
+.benefits-content-item::before {
+  content: "";
+  display: block;
+  margin-bottom: 30px;
   width: 270px;
-  height: 101px;
+  height: 120px;
+  border-radius: 4px;
+  background: var(--benefits-icon-background-color);
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-.benefits
-{
-  padding: 94px 0px;
+.benefits-content-item:first-child::before {
+  content: "";
+  background-image: url('../images/antenna.svg');
 }
+
+.benefits-content-item:nth-child(2)::before {
+  content: "";
+  background-image: url('../images/clock.svg');
+}
+
+.benefits-content-item:nth-child(3)::before {
+  content: "";
+  background-image: url('../images/diagram.svg');
+}
+
+.benefits-content-item:last-child::before {
+  content: "";
+  background-image: url('../images/astronaut.svg');
+}
+
+.features {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 94px;
+}
+
 
 .features .heading-2,
-.containers-team .heading-2 {
+.containers-team .heading-2,
+.customers .heading-2 {
   margin-bottom: 50px;
   color: #212121;
   text-align: center;
@@ -208,10 +268,7 @@ a span.logo-2 {
 .features-list {
   display: flex;
   justify-content: space-between;
-}
-
-.features {
-  padding-bottom: 94px;
+  gap: 30px;
 }
 
 .containers-team{
@@ -249,13 +306,111 @@ a span.logo-2 {
   align-items: center;
 }
 
+.social-links-list {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 30px;
+  gap: 10px;
+}
+
+.social-links-item,
+.social-icons-link {
+  display: flex;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+}
+
+.social-icons-link {
+  justify-content: center;
+  align-items: center;
+  color: var(--social-icons-color);
+  background-color: #FFFFFF;
+  border: none;
+  border-radius: 50px;
+}
+
+.social-icons-link:hover,
+.social-icons-link:focus,
+.footer-social-list .footer-social-icon-link:hover,
+.footer-social-list .footer-social-icon-link:focus {
+  background-color: var(--hover-color);
+  outline: none;
+}
+
+.icon-social-link {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  gap: 34px;
+  fill: currentColor;
+}
+
+.social-icons-link:hover .icon-social-link,
+.social-icons-link:focus .icon-social-link,
+.footer-social-list .footer-social-icon-link:hover,
+.footer-social-list .footer-social-icon-link:focus {
+  fill: #FFFFFF;
+  outline: none;
+}
+
+.customers {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+
+.customer-list {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.customer-list-item,
+.customer-link {
+  display: flex;
+}
+
+.customer-link {
+  justify-content: center;
+  align-items: center;
+  color: #AFB1B8;
+  border-radius: 4px;
+  border: 1px solid #AFB1B8;
+  width: 170px;
+  height: 92px;
+}
+
+.customer-icon {
+  fill: currentColor;
+  border: none;
+}
+
+.customer-link:hover,
+.customer-link:focus {
+  border: 1px solid #2196F3;
+  outline: none;
+}
+
+.customer-link:hover .customer-icon,
+.customer-link:focus .customer-icon  {
+  fill: var(--hover-color);
+  outline: none;
+}
+
 .global-footer {
+  display: block;
   background-color: var(--footer-color);
   padding: 60px 0px;
 }
 
+.global-footer .container {
+  display: flex;
+  align-items: flex-start;
+}
+
 .global-footer .address,
-.global-footer .footer-contact {
+.global-footer .footer-contact,
+.global-footer .footer-social-title {
   color: #FFF;
   font-size: 14px;
   letter-spacing: 0.42px;
@@ -266,19 +421,56 @@ a span.logo-2 {
   color: #FFFFFF;
 }
 
+.global-footer .footer-social-title {
+  margin-bottom: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
 .global-footer .footer-contact {
   color: rgba(255, 255, 255, 0.60);
   line-height: 1.14;
   margin-left:auto;
 }
 
-.footer-logo {
-  display: block;
-  margin-bottom: 20px;
+.global-footer .footer-main-part .footer-address-list {
+  margin-top: 28px;
 }
 
 .footer-address-list-item:not(:last-child) {
   margin-bottom: 12px;
+}
+
+.global-footer .footer-social-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-left: 106px;
+  margin-top: 15px;
+}
+
+.footer-social-list {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.footer-social-list .footer-social-icon-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  color: #FFFFFF;
+  fill: currentColor;
+  background-color: rgba(255, 255, 255, 0.10);
+  border-radius: 50px;
+}
+
+.footer-social-list .footer-icon {
+  width: 20px;
+  height: 20px;
 }
 
 .btn-group {
